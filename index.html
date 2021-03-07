@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>ZAP ODC</title>
+    <link rel="stylesheet" href="files/style.css">
+    <link rel="stylesheet" href="file/to/path/css/emojionearea.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <div id="root" class="noselect">
+
+
+        <div class="container">
+            <div class="row ">
+                <H1><strong>ETAPA 1 </strong></H1>
+                <div class="col mt-5" >
+
+
+                    <img id="image"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATYAAACjCAMAAAA3vsLfAAAArlBMVEX////6+vr+/Pz87OL89PTl6NbM1c386Nqwwdf2l3eYlcv8//+istT19fH9lam4xNexvILt8OX4r3bO1eStuXz98Ov9i6Lh5eXh5+34sXupq9Kwu9WjtNLM07v64uH219L2kXH2oZP7nq6hnc7Ey6j66ur84c/3pmX5y6/5u4z3rob5wJb7sbj4xsi1tNayvIrf3sb71b33p4v1nYD6vK32tKH1zcP4s6r1w7T8v8m6ft0sAAACf0lEQVR4nO3aWXOiQBSGYRraRAWURVwTjdn3TGaf///H5jTQgxpHkytC+T5WCTRcdH11enFxHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAw7lu3T1oIldrcvuAMMwPWuQnVN17hNHg1BxtbNrzyG2/eFDkVsYmqXm67j41QPgSRYPYxuZKalTbe1xGUXRpY8sktazuHjVCLLFFbrmSUmz7Xb1em4i+DAaRKldQO7PpjPD+5yZJbm4lntbLqW3KMpNadixq7NjndpdMJsnk7bppQjv2auhQM+h7k9vDZrOXx8YgXaHWrvRdkiT3Om9X9pab11qRmlp//mBtxjC/fXjdbM+8jA3vOhOPKmtIKd/3Hcc31+ZlbhS3ipbq8YOvOVUMPBOL71/N57q6Ls/yg6tDvf74YbNzmBwXXzudzrfv2rbb2nKUG7cM7djGN2P70JSDT96zs45x9qNqt7EVqbVaqykftpVqWxa5/fTL6yq2sEgtptqsKhxHX/9aLn9nvg2rik2FWdyKQ1cxt5VWl0azkPqOXUBXApU3+WhfZslKus2Wz+xKK4blTvPH4fB8Y2+rjgQ/x+zwNOz1eltjOxrV06MmWJjUhk+bzSNy28mk1lvIyfhfwSnz61+Y51Zfvz65x975HwlMT7tT29Rvp+aL3hHVttdzt3she43ZTJnY2v26+9MMabdrqi0NgjSPrU2dvcdUYpPAZkEwk1lOYuuz+dhvfCHFJsPzJAhOZFYz5cZWd7+xzGxjx8bmhJLbuO4+NYA7e87/ctQPgnwxCNO03g41S7Ek4IPcPksBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADTeX0vjGCUN/+EfAAAAAElFTkSuQmCC"
+                        draggable="false" alt="qr-code">
+
+                    <form>
+                        <p id="title">
+                            Digite o nome da sessão
+                        </p>
+
+                        <label for="session" id="description">
+                            Para iniciar a sessão, você deve digitar o nome<br />e aguardar alguns segundos...
+                        </label>
+                        <input type="text" name="session" v-model="session" id="session" autocomplete="off">
+                        <button type="button" id="send-btn"
+                            onclick="alterSession(document.getElementById('session').value)">
+                            Enviar
+                        </button>
+                    </form>
+
+
+                </div>
+            </div>
+            <hr>
+            <hr>
+            <H1><strong>ETAPA 2 </strong></H1>
+            <h5>*Para o sistema entender os números, é preciso que os números estejam ao seu final um :  <h4 style="color: red;">;</h4></h5>
+            
+                <div class="row mt-5">
+
+
+
+
+
+                    <textarea placeholder="Entre com os numeros" id="tel" type="textarea"> </textarea>
+
+                    <button type="button" class="btn btn-primary" id="send-btn" @click="add"> ADICIONAR NÚMEROS</button>
+
+                    <label>Numeros Adicionados </label>
+                    <textarea disabled>{{numero}}</textarea>
+
+                </div>
+                <hr>
+                <hr>
+
+                <H1><strong>ETAPA 3 </strong></H1>
+             
+               
+
+                    <div class="form-floating mb-5">
+                        <textarea class="form-control" v-model="texto" placeholder="Entre Com Texto"
+                            id="floatingTextarea"></textarea>
+
+                        <button class="btn btn-success" type="button" id="send-btn" @click="enviar">Enviar o
+                            Texto</button>
+                    </div>
+
+
+
+          
+           
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+</body>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+
+
+
+
+
+<script>
+    async function getSession(session) {
+        let params = new FormData()
+        params.append('sessionName', session)
+        console.log(params)
+        console.log(session)
+        await axios.post('/iniciar-sessao', params)
+    }
+
+    async function alterSession(session) {
+        if (!session) {
+            alert("Digite o nome da sessão antes de continuar...")
+        } else {
+            document.getElementById('send-btn').disabled = true
+            await getSession(session)
+            document.getElementById('image').src = 'files/' + session + '.png'
+        }
+    }
+</script>
+
+
+
+<script>
+    const socket = io();
+
+    socket.on('whatsapp-started', (status) => {
+        console.log(status)
+    })
+
+    socket.on('qrCode', (qrCode) => {
+        let session = document.getElementById('session').value
+        console.log(qrCode)
+        if (session === qrCode.session) {
+            //recebe o QRCode do Socket.io e joga a imagem (base64) pra dentro do src.
+            //esse envio e recebimento pode ser customizado.
+            document.getElementById('image').src = qrCode.data
+        }
+    })
+
+ 
+
+ 
+
+    socket.on('whatsapp-status', (status) => {
+        if (status) {
+           
+            alert('Whatsapp Aberto com sucesso')
+            document.getElementById('send-btn').disabled = false
+        } else {
+            alert('Whatsapp fechado com sucesso')
+        }
+    })
+
+    socket.on('mensagem-recebida', (message) => {
+        let session = document.getElementById('session').value
+        if (session === message.session) {
+            console.log(
+                `[${message.session}]: Mensagem Recebida: \nTelefone: ' ${message.data.from}, Mensagem: ${message.data.body}`
+                )
+        }
+    })
+</script>
+
+<script>
+    new Vue({
+        el: "#root",
+        data: {
+            numero: ['5521980807127', '5521980807127'],
+            novonumero: '',
+            texto: '',
+            session: '',
+        },
+
+        methods: {
+            enviar() {
+                alert('Menssagens enviando, verifique no celular')
+                axios({
+                    method: 'post',
+                    url: '/enviar-mensagem/',
+                    data: {
+                        phone: this.numero,
+                        texto: this.texto,
+                        session: this.session
+                    }
+
+                }).then(function (response) {
+                    console.log(response)
+                })
+            },
+
+            add() {
+                var nnumero = document.getElementById('tel').value;
+                this.numero = nnumero.split(';')
+                console.log(this.numero)
+
+
+
+            }
+        },
+
+
+
+
+    })
+</script>
+</body>
+
+</html>
